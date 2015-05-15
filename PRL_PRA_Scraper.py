@@ -96,7 +96,7 @@ if any([new_prl,new_pra]):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login('2.321.drive','Ry=13.6eV')
+    s.login('2.321.drive',password)
     s.sendmail('2.321.drive',addresses,msg.encode('utf8'))
     s.quit()
 
