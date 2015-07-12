@@ -5,8 +5,8 @@ import datetime
 import poplib
 
 p = poplib.POP3_SSL('pop.gmail.com')
-p.user('2.321.drive')
-p.pass_('Ry=13.6eV')
+p.user(username)
+p.pass_(password)
 
 mails = [p.retr(emailNum)[1] for emailNum in [int(numstr.split(' ')[0]) for numstr in p.list()[1]]]
 
@@ -96,8 +96,8 @@ if any([new_prl,new_pra]):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login('2.321.drive',password)
-    s.sendmail('2.321.drive',addresses,msg.encode('utf8'))
+    s.login(username,password)
+    s.sendmail(username,addresses,msg.encode('utf8'))
     s.quit()
 
     current_file = open('C:/Users/2-321 Desktop/Desktop/Anaconda/PRL_PRA_Scraper.txt','w')
